@@ -10,7 +10,7 @@ const connection = mysql.createConnection({
 })
 
 connection.connect((err) => {
-    if(err) throw err
+    if (err) throw err
     console.log('La conexión a la base de datos se ha realizado correctamente')
 })
 //conexion de la base de datos con javascript
@@ -20,11 +20,16 @@ connection.connect((err) => {
 // 4) node .\mysql.js   
 
 connection.query('SELECT * FROM usuarios', (err, result) => {
-    if(err) throw err
+    if (err) throw err
     console.log('Los datos de la tabla son: ', result) //result muestra los datos de la tabla sin esto no parece nada
-    console.log('La cantidad de resultados es:' , result.length)//result.length muestra la cantidad de resultados
+    console.log('La cantidad de resultados es:', result.length)//result.length muestra la cantidad de resultados
     const usuarioUno = result[0] //para motrar el priner usuario siempre se pone un 0 ya que este lo cuenta como numero de inicio
     console.log('El primer usuario es: ', usuarioUno)
     const usuarioDos = result[1]
     console.log('El segundo usuario es: ', usuarioDos)
+})
+//en esta consulta insertamos en la tabla usuarios los datos que queramos por ejemplo el id, nombre, apellido y edad
+connection.query('insert into usuarios (id , nombre, apellido, edad) values ("3","Manolo", "Perez", 25)', (err, result) => {
+    if (err) throw err
+    console.log('El usuario se ha insertado correctamente')
 })
