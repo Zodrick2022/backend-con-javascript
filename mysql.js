@@ -28,7 +28,7 @@ connection.query('SELECT * FROM usuarios', (err, result) => {
     const usuarioDos = result[1]
     console.log('El segundo usuario es: ', usuarioDos)
 })
-//en esta consulta insertamos en la tabla usuarios los datos que queramos por ejemplo el id, nombre, apellido y edad
+//en esta consulta insertamos en la tabla usuarios los datos que queramos por ejemplo el id, nombre, apellido y edad :D
 connection.query('insert into usuarios (id , nombre, apellido, edad) values ("3","Manolo", "Perez", 25)', (err, result) => {
     if (err) throw err
     console.log('El usuario se ha insertado correctamente')
