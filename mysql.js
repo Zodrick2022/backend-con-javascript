@@ -23,7 +23,7 @@ connection.query('SELECT * FROM usuarios', (err, result) => {
     if (err) throw err
     console.log('Los datos de la tabla son: ', result) //result muestra los datos de la tabla sin esto no parece nada
     console.log('La cantidad de resultados es:', result.length)//result.length muestra la cantidad de resultados
-    const usuarioUno = result[0] //para motrar el priner usuario siempre se pone un 0 ya que este lo cuenta como numero de inicio
+    const usuarioUno = result[0] //para motrar el priner usuario siempre se pone un 0 ya que este lo cuenta como numero de inicio :D
     console.log('El primer usuario es: ', usuarioUno)
     const usuarioDos = result[1]
     console.log('El segundo usuario es: ', usuarioDos)
